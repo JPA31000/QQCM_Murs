@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QCM : Les Murs dans la Construction</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f2f5;
+      margin: 0;
+      padding: 2rem;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    .quiz-container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+    }
+    .question {
+      margin-bottom: 2rem;
+    }
+    .question h3 {
+      margin-bottom: 1rem;
+    }
+    label {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+    }
+    input[type="radio"] {
+      margin-right: 0.75rem;
+    }
+    button {
+      display: block;
+      margin: 2rem auto;
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+    .results {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #ecf0f1;
+      border-radius: 12px;
+    }
+    .correct {
+      color: green;
+    }
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>QCM : Les Murs dans la Construction</h1>
+    <form id="quizForm">
+      <div class="question">
+        <h3>1. Quel type de mur supporte les charges d'un bâtiment ?</h3>
+        <label><input type="radio" name="q1" value="1" /> Mur porteur</label>
+        <label><input type="radio" name="q1" value="0" /> Mur rideau</label>
+        <label><input type="radio" name="q1" value="0" /> Mur de séparation</label>
+        <label><input type="radio" name="q1" value="0" /> Mur de soutènement</label>
+      </div>
+      <div class="question">
+        <h3>2. Quelle fonction du mur contribue à l'efficacité énergétique ?</h3>
+        <label><input type="radio" name="q2" value="0" /> Esthétique</label>
+        <label><input type="radio" name="q2" value="0" /> Protection</label>
+        <label><input type="radio" name="q2" value="1" /> Isolation</label>
+        <label><input type="radio" name="q2" value="0" /> Stabilité structurelle</label>
+      </div>
+      <div class="question">
+        <h3>3. Quel matériau est utilisé pour les cloisons intérieures ?</h3>
+        <label><input type="radio" name="q3" value="1" /> Plaques de plâtre</label>
+        <label><input type="radio" name="q3" value="0" /> Béton armé</label>
+        <label><input type="radio" name="q3" value="0" /> Pierres naturelles</label>
+        <label><input type="radio" name="q3" value="0" /> Ossature bois</label>
+      </div>
+      <div class="question">
+        <h3>4. Quel type de mur est utilisé pour retenir le sol ?</h3>
+        <label><input type="radio" name="q4" value="0" /> Mur porteur</label>
+        <label><input type="radio" name="q4" value="0" /> Mur de séparation</label>
+        <label><input type="radio" name="q4" value="1" /> Mur de soutènement</label>
+        <label><input type="radio" name="q4" value="0" /> Mur rideau</label>
+      </div>
+      <div class="question">
+        <h3>5. Quelle méthode de pose utilise un coffrage ?</h3>
+        <label><input type="radio" name="q5" value="1" /> Béton armé</label>
+        <label><input type="radio" name="q5" value="0" /> Ossature bois</label>
+        <label><input type="radio" name="q5" value="0" /> Maçonnerie traditionnelle</label>
+        <label><input type="radio" name="q5" value="0" /> Plaques de plâtre</label>
+      </div>
+      <div class="question">
+        <h3>6. Quel bloc est conçu pour être rempli de béton ?</h3>
+        <label><input type="radio" name="q6" value="0" /> Bloc creux</label>
+        <label><input type="radio" name="q6" value="1" /> Bloc à bancher</label>
+        <label><input type="radio" name="q6" value="0" /> Bloc plein</label>
+        <label><input type="radio" name="q6" value="0" /> Bloc cellulaire</label>
+      </div>
+      <div class="question">
+        <h3>7. Quelle technique moderne de pose de BBM utilise une colle ?</h3>
+        <label><input type="radio" name="q7" value="1" /> Pose à joints minces</label>
+        <label><input type="radio" name="q7" value="0" /> Pose au mortier épais</label>
+        <label><input type="radio" name="q7" value="0" /> Pose par emboîtement</label>
+        <label><input type="radio" name="q7" value="0" /> Pose sur ossature</label>
+      </div>
+      <div class="question">
+        <h3>8. Quel avantage présentent les blocs de béton manufacturés ?</h3>
+        <label><input type="radio" name="q8" value="1" /> Durabilité et faible impact écologique</label>
+        <label><input type="radio" name="q8" value="0" /> Utilisation exclusive en décoration</label>
+        <label><input type="radio" name="q8" value="0" /> Instabilité structurelle</label>
+        <label><input type="radio" name="q8" value="0" /> Fragilité au gel</label>
+      </div>
+      <button type="button" onclick="corrigerQCM()">Corriger</button>
+    </form>
+    <div id="results" class="results"></div>
+  </div>
+  <script>
+    function corrigerQCM() {
+      const form = document.getElementById('quizForm');
+      let score = 0;
+      const total = 8;
+      const results = document.getElementById('results');
+      results.innerHTML = '';
+
+      for (let i = 1; i <= total; i++) {
+        const q = form[`q${i}`];
+        const checked = [...q].find(r => r.checked);
+        [...q].forEach(r => r.disabled = true);
+        if (checked && checked.value === "1") {
+          score++;
+          results.innerHTML += `<p class='correct'>Question ${i} : Bonne réponse ✔️</p>`;
+        } else {
+          const bonne = [...q].find(r => r.value === "1").nextSibling.textContent.trim();
+          results.innerHTML += `<p class='incorrect'>Question ${i} : Mauvaise réponse ❌ (Bonne réponse : ${bonne})</p>`;
+        }
+      }
+
+      results.innerHTML = `<h3>Score : ${score} / ${total}</h3>` + results.innerHTML;
+    }
+  </script>
+</body>
+</html>
